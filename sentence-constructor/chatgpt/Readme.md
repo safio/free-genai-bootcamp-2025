@@ -1,16 +1,71 @@
-## Perplexity Powered Assistant Guide
+# ChatGPT Sentence Constructor Guide
 
-### Which Model
-Perplexity Pro uses their own model by default, but specific models can be chosen in user settings.
+## Overview
+This guide explains how to use ChatGPT (paid version) for the sentence constructor project. The project helps students learn French through interactive sentence construction exercises.
 
-https://www.perplexity.ai/hub/technical-faq/what-model-does-perplexity-use-and-what-is-the-perplexity-model
+## What I used
+- Paid ChatGPT subscription (ChatGPT Plus)
+- Text files (.txt) for all inputs
+## Important File Format Notes
+- All input files MUST be in `.txt` format
+- XML-like structure should be contained within `.txt` files
+- Do not use `.xml` files directly with ChatGPT
 
-https://www.perplexity.ai/hub/technical-faq/what-advanced-ai-models-does-perplexity-pro-unlock
+## Workspace Setup
+Here's how your ChatGPT workspace should look:
 
-We also explored Deepseek R-1 and OpenAI's o3-mini in the spanish sentence constructor video.
+![ChatGPT Workspace Setup](workspace.png)
 
-### Prompting Guides
+Key elements in the workspace:
+- Project title: "French Language Teacher"
+- Files section with your .txt documents
+- Instructions panel with role and language level
+- New chat option for starting fresh conversations
 
-https://www.perplexity.ai/hub/faq/prompting-tips-and-examples-on-perplexity
+## Project Structure
+```
+sentence-constructor/chatgpt/
+├── french-teaching-test.txt      # Test cases and examples
+├── sentence-structure-examples.txt    # Sentence structure patterns
+└── prompt_to_teach.md           # Teaching instructions
+```
 
-It appears that Perplexity does not have any special prompting requirements (XML, markdown) to best understand context like other models.
+## Key Features
+1. Interactive sentence construction
+2. Vocabulary assistance
+3. Grammar guidance
+4. Progressive learning states:
+   - Setup
+   - Attempt
+   - Clues
+
+## How to Use
+1. Prepare your input files in `.txt` format
+2. Follow the prompt engineering guidelines from [OpenAI's documentation](https://platform.openai.com/docs/guides/prompt-engineering)
+3. Use the provided test cases and examples as templates
+4. Ensure all XML-style content is saved in `.txt` files
+
+## Best Practices
+1. Keep file sizes reasonable for ChatGPT's context window
+2. Use clear, structured formats in your .txt files
+3. Follow the state transition rules defined in the teaching instructions
+4. Reference the vocabulary and sentence structure examples provided
+
+## File Format Examples
+```
+# Example content structure in .txt files:
+<test-cases>
+    <case id="simple-1">
+        <english>I eat bread.</english>
+        <vocabulary>
+            <!-- vocabulary content -->
+        </vocabulary>
+    </case>
+</test-cases>
+```
+
+## Support
+For more information, visit the [OpenAI documentation](https://platform.openai.com/docs/guides/prompt-engineering)
+
+## Version
+1.0.0 - Initial Release
