@@ -20,11 +20,22 @@ This is a sentence constructor that uses the Deepseek model to construct sentenc
 - Sentence Structure: Defines word order and grammar rules
 - Teaching Clues: Provides helpful hints for sentence construction
 
+## Example Attempt and Feedback
+
+![Attempt State Example](AttemptState.png)
+
+### Feedback Process
+- Vocabulary check: Verifying correct word choices
+- Structure analysis: Checking word order and grammar rules
+- Constructive feedback: Highlighting successes and areas for improvement
+- Interactive guidance: Offering additional clues when needed
+
 ## Features
 - Local execution using Ollama
 - French language sentence construction
 - Customizable workspace settings
 - Step-by-step teaching methodology
+- Detailed feedback system
 
 ## Setup
 1. Install Ollama
