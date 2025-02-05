@@ -39,6 +39,86 @@ sentence-constructor/chatgpt/
    - Attempt
    - Clues
 
+## Setup State
+When you start a new conversation, you'll enter the Setup State. Here's what it looks like:
+
+![Setup State Example](Setup_State.png)
+
+The Setup State includes:
+1. Vocabulary Table
+   - French words in their dictionary form
+   - English translations
+   - Clear two-column format
+
+2. Sentence Structure
+   - Shows the pattern using [brackets]
+   - Includes helpful examples
+   - Matches beginner-friendly patterns
+
+3. Clues & Considerations
+   - Grammar tips
+   - Word order guidance
+   - Gender and conjugation hints
+   - Next steps for the student
+
+Your Task will always be clearly stated at the bottom of the Setup State.
+
+## Attempt State
+After you make your first attempt at constructing a French sentence, you'll enter the Attempt State:
+
+![Attempt State Example](Attempt_State.png)
+
+The Attempt State shows:
+1. Your Attempt
+   - Your submitted French sentence
+   - A checkmark (✓) if the structure is correct
+   - An X if there are improvements needed
+
+2. Interpretation
+   - English translation of your attempt
+   - Notes about what was correct/incorrect
+   - Explanation of any missing elements
+
+3. Corrections & Considerations
+   - Specific points for improvement
+   - Grammar explanations
+   - Gender and form guidance
+   - Structure validation
+
+4. Next Steps
+   - Clear instructions for your next attempt
+   - Encouraging feedback
+   - Specific points to focus on
+
+## Clues Instead of Direct Answers
+When you ask for the direct answer, the system will provide helpful clues instead:
+
+![Clues Instead of Direct Answers](answer_directly.png)
+
+This approach:
+- Encourages active learning
+- Provides targeted hints
+- Maintains the learning challenge
+- Guides you to discover the answer yourself
+
+## Success State - Final Answer
+When you successfully construct the correct French sentence:
+
+![Final Answer Success](finalAnswer.png)
+
+What you'll see:
+1. A green checkmark (✓) confirming your correct answer
+2. Detailed interpretation of your sentence
+3. Explanation of why your answer is correct
+4. Grammar points you've mastered
+5. Encouragement to try another sentence
+
+This positive reinforcement helps:
+- Build confidence
+- Validate learning progress
+- Reinforce correct grammar usage
+- Motivate further practice
+
 ## How to Use
 1. Prepare your input files in `.txt` format
 2. Follow the prompt engineering guidelines from [OpenAI's documentation](https://platform.openai.com/docs/guides/prompt-engineering)
