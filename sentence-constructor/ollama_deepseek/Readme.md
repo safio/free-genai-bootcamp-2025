@@ -30,12 +30,24 @@ This is a sentence constructor that uses the Deepseek model to construct sentenc
 - Constructive feedback: Highlighting successes and areas for improvement
 - Interactive guidance: Offering additional clues when needed
 
+## Final Answer Guidance
+
+![Clues and Final Answer](Clues.png)
+
+### Teaching Approach
+- Acknowledge student effort
+- Provide correct answer with explanation
+- Break down grammatical components
+- Encourage further practice
+- Focus on learning process over memorization
+
 ## Features
 - Local execution using Ollama
 - French language sentence construction
 - Customizable workspace settings
 - Step-by-step teaching methodology
 - Detailed feedback system
+- Structured learning progression
 
 ## Setup
 1. Install Ollama
