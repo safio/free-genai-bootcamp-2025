@@ -1,0 +1,759 @@
+{'openapi': '3.1.0', 'info': {'title': 'Language Learning Portal', 'version': '0.1.0'
+    }, 'paths': {'/api/words': {'post': {'tags': ['words'
+                ], 'summary': 'Create Word', 'operationId': 'create_word_api_words_post', 'requestBody': {'required': True, 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/WordCreate'
+                            }
+                        }
+                    }
+                }, 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/Word'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'get': {'summary': 'Get Words', 'operationId': 'get_words_api_words_get', 'parameters': [
+                    {'name': 'page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 1, 'title': 'Page'
+                        }
+                    },
+                    {'name': 'per_page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 10, 'title': 'Per Page'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/words/{word_id
+        }': {'get': {'summary': 'Get Word', 'operationId': 'get_word_api_words__word_id__get', 'parameters': [
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'put': {'tags': ['words'
+                ], 'summary': 'Update Word', 'operationId': 'update_word_api_words__word_id__put', 'parameters': [
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'requestBody': {'required': True, 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/WordCreate'
+                            }
+                        }
+                    }
+                }, 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/Word'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'delete': {'tags': ['words'
+                ], 'summary': 'Delete Word', 'operationId': 'delete_word_api_words__word_id__delete', 'parameters': [
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/words/search/': {'get': {'tags': ['words'
+                ], 'summary': 'Search Words', 'operationId': 'search_words_api_words_search__get', 'parameters': [
+                    {'name': 'query', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Query'
+                        }
+                    },
+                    {'name': 'language', 'in': 'query', 'required': False, 'schema': {'type': 'string', 'default': 'french', 'title': 'Language'
+                        }
+                    },
+                    {'name': 'skip', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 0, 'title': 'Skip'
+                        }
+                    },
+                    {'name': 'limit', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 100, 'title': 'Limit'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/PaginatedResponse_Word_'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/words/{word_id
+        }/progress': {'get': {'tags': ['words'
+                ], 'summary': 'Get Word Progress', 'operationId': 'get_word_progress_api_words__word_id__progress_get', 'parameters': [
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'type': 'object', 'title': 'Response Get Word Progress Api Words  Word Id  Progress Get'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/groups/': {'post': {'tags': ['groups'
+                ], 'summary': 'Create Group', 'operationId': 'create_group_api_groups__post', 'requestBody': {'required': True, 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/GroupCreate'
+                            }
+                        }
+                    }
+                }, 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/Group'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'get': {'tags': ['groups'
+                ], 'summary': 'Get Groups', 'operationId': 'get_groups_api_groups__get', 'parameters': [
+                    {'name': 'skip', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 0, 'title': 'Skip'
+                        }
+                    },
+                    {'name': 'limit', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 100, 'title': 'Limit'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/PaginatedResponse_Group_'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/groups/{group_id
+        }': {'get': {'summary': 'Get Group', 'operationId': 'get_group_api_groups__group_id__get', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'put': {'tags': ['groups'
+                ], 'summary': 'Update Group Orm', 'operationId': 'update_group_orm_api_groups__group_id__put', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    },
+                    {'name': 'name', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Name'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'delete': {'tags': ['groups'
+                ], 'summary': 'Delete Group Orm', 'operationId': 'delete_group_orm_api_groups__group_id__delete', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/groups/{group_id
+        }/words/{word_id
+        }': {'post': {'tags': ['groups'
+                ], 'summary': 'Add Word To Group Orm', 'operationId': 'add_word_to_group_orm_api_groups__group_id__words__word_id__post', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    },
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'delete': {'tags': ['groups'
+                ], 'summary': 'Remove Word From Group Orm', 'operationId': 'remove_word_from_group_orm_api_groups__group_id__words__word_id__delete', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    },
+                    {'name': 'word_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/groups/{group_id
+        }/words': {'get': {'summary': 'Get Group Words', 'operationId': 'get_group_words_api_groups__group_id__words_get', 'parameters': [
+                    {'name': 'group_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    },
+                    {'name': 'page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 1, 'title': 'Page'
+                        }
+                    },
+                    {'name': 'per_page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 10, 'title': 'Per Page'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/groups': {'post': {'tags': ['groups'
+                ], 'summary': 'Create Group Orm', 'operationId': 'create_group_orm_api_groups_post', 'parameters': [
+                    {'name': 'name', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Name'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'get': {'summary': 'Get Groups', 'operationId': 'get_groups_api_groups_get', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Study Sessions', 'operationId': 'get_study_sessions_api_study_sessions__get', 'parameters': [
+                    {'name': 'skip', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 0, 'title': 'Skip'
+                        }
+                    },
+                    {'name': 'limit', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 100, 'title': 'Limit'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/PaginatedResponse_StudySession_'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'post': {'tags': ['study-sessions'
+                ], 'summary': 'Create Study Session', 'operationId': 'create_study_session_api_study_sessions__post', 'parameters': [
+                    {'name': 'activity_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Activity Id'
+                        }
+                    },
+                    {'name': 'group_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/StudySession'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/reviews': {'post': {'tags': ['study-sessions'
+                ], 'summary': 'Create Word Review', 'operationId': 'create_word_review_api_study_sessions_reviews_post', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    },
+                    {'name': 'word_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    }
+                ], 'requestBody': {'required': True, 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/WordReviewCreate'
+                            }
+                        }
+                    }
+                }, 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/WordReview'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/dashboard/stats': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Dashboard Stats', 'operationId': 'get_dashboard_stats_api_study_sessions_dashboard_stats_get', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/DashboardStats'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/progress': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Session Progress', 'operationId': 'get_session_progress_api_study_sessions_progress_get', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'type': 'object', 'title': 'Response Get Session Progress Api Study Sessions Progress Get'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/words': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Session Words', 'operationId': 'get_session_words_api_study_sessions_words_get', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    },
+                    {'name': 'reviewed_only', 'in': 'query', 'required': False, 'schema': {'type': 'boolean', 'default': False, 'title': 'Reviewed Only'
+                        }
+                    },
+                    {'name': 'correct_only', 'in': 'query', 'required': False, 'schema': {'type': 'boolean', 'title': 'Correct Only'
+                        }
+                    },
+                    {'name': 'skip', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 0, 'title': 'Skip'
+                        }
+                    },
+                    {'name': 'limit', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 100, 'title': 'Limit'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/PaginatedResponse_Word_'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/recent': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Recent Sessions', 'operationId': 'get_recent_sessions_api_study_sessions_recent_get', 'parameters': [
+                    {'name': 'days', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 7, 'title': 'Days'
+                        }
+                    },
+                    {'name': 'skip', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 0, 'title': 'Skip'
+                        }
+                    },
+                    {'name': 'limit', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 100, 'title': 'Limit'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/PaginatedResponse_StudySession_'
+                                }
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/study_sessions': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Study Sessions Sync', 'operationId': 'get_study_sessions_sync_api_study_sessions_study_sessions_get', 'parameters': [
+                    {'name': 'page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 1, 'title': 'Page'
+                        }
+                    },
+                    {'name': 'per_page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 10, 'title': 'Per Page'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'post': {'tags': ['study-sessions'
+                ], 'summary': 'Create Study Session Sync', 'operationId': 'create_study_session_sync_api_study_sessions_study_sessions_post', 'parameters': [
+                    {'name': 'activity_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Activity Id'
+                        }
+                    },
+                    {'name': 'group_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Group Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/{session_id
+        }': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Study Session', 'operationId': 'get_study_session_api_study_sessions__session_id__get', 'parameters': [
+                    {'name': 'session_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/review-items': {'get': {'tags': ['study-sessions'
+                ], 'summary': 'Get Session Review Items', 'operationId': 'get_session_review_items_api_study_sessions_review_items_get', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    },
+                    {'name': 'page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 1, 'title': 'Page'
+                        }
+                    },
+                    {'name': 'per_page', 'in': 'query', 'required': False, 'schema': {'type': 'integer', 'default': 10, 'title': 'Per Page'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'post': {'tags': ['study-sessions'
+                ], 'summary': 'Add Review Item', 'operationId': 'add_review_item_api_study_sessions_review_items_post', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    },
+                    {'name': 'word_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Word Id'
+                        }
+                    },
+                    {'name': 'is_correct', 'in': 'query', 'required': True, 'schema': {'type': 'boolean', 'title': 'Is Correct'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-sessions/end': {'put': {'tags': ['study-sessions'
+                ], 'summary': 'End Study Session', 'operationId': 'end_study_session_api_study_sessions_end_put', 'parameters': [
+                    {'name': 'session_id', 'in': 'query', 'required': True, 'schema': {'type': 'integer', 'title': 'Session Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-activities': {'get': {'tags': ['study-activities'
+                ], 'summary': 'Get Study Activities', 'operationId': 'get_study_activities_api_study_activities_get', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }
+                }
+            }, 'post': {'tags': ['study-activities'
+                ], 'summary': 'Create Study Activity', 'operationId': 'create_study_activity_api_study_activities_post', 'parameters': [
+                    {'name': 'name', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Name'
+                        }
+                    },
+                    {'name': 'description', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Description'
+                        }
+                    },
+                    {'name': 'thumbnail_url', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Thumbnail Url'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/study-activities/{activity_id
+        }': {'get': {'tags': ['study-activities'
+                ], 'summary': 'Get Study Activity', 'operationId': 'get_study_activity_api_study_activities__activity_id__get', 'parameters': [
+                    {'name': 'activity_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Activity Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'put': {'tags': ['study-activities'
+                ], 'summary': 'Update Study Activity', 'operationId': 'update_study_activity_api_study_activities__activity_id__put', 'parameters': [
+                    {'name': 'activity_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Activity Id'
+                        }
+                    },
+                    {'name': 'name', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Name'
+                        }
+                    },
+                    {'name': 'description', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Description'
+                        }
+                    },
+                    {'name': 'thumbnail_url', 'in': 'query', 'required': True, 'schema': {'type': 'string', 'title': 'Thumbnail Url'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }, 'delete': {'tags': ['study-activities'
+                ], 'summary': 'Delete Study Activity', 'operationId': 'delete_study_activity_api_study_activities__activity_id__delete', 'parameters': [
+                    {'name': 'activity_id', 'in': 'path', 'required': True, 'schema': {'type': 'integer', 'title': 'Activity Id'
+                        }
+                    }
+                ], 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }, '422': {'description': 'Validation Error', 'content': {'application/json': {'schema': {'$ref': '#/components/schemas/HTTPValidationError'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/reset_history': {'post': {'summary': 'Reset History', 'operationId': 'reset_history_api_reset_history_post', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/api/full_reset': {'post': {'summary': 'Full Reset', 'operationId': 'full_reset_api_full_reset_post', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }
+                }
+            }
+        }, '/': {'get': {'summary': 'Root', 'operationId': 'root__get', 'responses': {'200': {'description': 'Successful Response', 'content': {'application/json': {'schema': {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }, 'components': {'schemas': {'DashboardStats': {'properties': {'success_rate': {'type': 'number', 'title': 'Success Rate'
+                    }, 'total_study_sessions': {'type': 'integer', 'title': 'Total Study Sessions'
+                    }, 'total_active_groups': {'type': 'integer', 'title': 'Total Active Groups'
+                    }, 'study_streak_days': {'type': 'integer', 'title': 'Study Streak Days'
+                    }
+                }, 'type': 'object', 'required': ['success_rate', 'total_study_sessions', 'total_active_groups', 'study_streak_days'
+                ], 'title': 'DashboardStats'
+            }, 'Group': {'properties': {'name': {'type': 'string', 'title': 'Name'
+                    }, 'id': {'type': 'integer', 'title': 'Id'
+                    }, 'created_at': {'type': 'string', 'format': 'date-time', 'title': 'Created At'
+                    }, 'updated_at': {'type': 'string', 'format': 'date-time', 'title': 'Updated At'
+                    }, 'words': {'items': {'$ref': '#/components/schemas/Word'
+                        }, 'type': 'array', 'title': 'Words', 'default': []
+                    }
+                }, 'type': 'object', 'required': ['name', 'id', 'created_at', 'updated_at'
+                ], 'title': 'Group'
+            }, 'GroupCreate': {'properties': {'name': {'type': 'string', 'title': 'Name'
+                    }
+                }, 'type': 'object', 'required': ['name'
+                ], 'title': 'GroupCreate'
+            }, 'HTTPValidationError': {'properties': {'detail': {'items': {'$ref': '#/components/schemas/ValidationError'
+                        }, 'type': 'array', 'title': 'Detail'
+                    }
+                }, 'type': 'object', 'title': 'HTTPValidationError'
+            }, 'PaginatedResponse_Group_': {'properties': {'items': {'items': {'$ref': '#/components/schemas/Group'
+                        }, 'type': 'array', 'title': 'Items'
+                    }, 'pagination': {'$ref': '#/components/schemas/PaginationParams'
+                    }
+                }, 'type': 'object', 'required': ['items', 'pagination'
+                ], 'title': 'PaginatedResponse[Group
+                ]'
+            }, 'PaginatedResponse_StudySession_': {'properties': {'items': {'items': {'$ref': '#/components/schemas/StudySession'
+                        }, 'type': 'array', 'title': 'Items'
+                    }, 'pagination': {'$ref': '#/components/schemas/PaginationParams'
+                    }
+                }, 'type': 'object', 'required': ['items', 'pagination'
+                ], 'title': 'PaginatedResponse[StudySession
+                ]'
+            }, 'PaginatedResponse_Word_': {'properties': {'items': {'items': {'$ref': '#/components/schemas/Word'
+                        }, 'type': 'array', 'title': 'Items'
+                    }, 'pagination': {'$ref': '#/components/schemas/PaginationParams'
+                    }
+                }, 'type': 'object', 'required': ['items', 'pagination'
+                ], 'title': 'PaginatedResponse[Word
+                ]'
+            }, 'PaginationParams': {'properties': {'current_page': {'type': 'integer', 'title': 'Current Page'
+                    }, 'total_pages': {'type': 'integer', 'title': 'Total Pages'
+                    }, 'total_items': {'type': 'integer', 'title': 'Total Items'
+                    }, 'items_per_page': {'type': 'integer', 'title': 'Items Per Page'
+                    }
+                }, 'type': 'object', 'required': ['current_page', 'total_pages', 'total_items', 'items_per_page'
+                ], 'title': 'PaginationParams'
+            }, 'StudyActivity': {'properties': {'name': {'type': 'string', 'title': 'Name'
+                    }, 'description': {'type': 'string', 'title': 'Description'
+                    }, 'thumbnail_url': {'type': 'string', 'title': 'Thumbnail Url'
+                    }, 'id': {'type': 'integer', 'title': 'Id'
+                    }, 'created_at': {'type': 'string', 'format': 'date-time', 'title': 'Created At'
+                    }, 'updated_at': {'type': 'string', 'format': 'date-time', 'title': 'Updated At'
+                    }
+                }, 'type': 'object', 'required': ['name', 'description', 'thumbnail_url', 'id', 'created_at', 'updated_at'
+                ], 'title': 'StudyActivity'
+            }, 'StudySession': {'properties': {'activity_id': {'type': 'integer', 'title': 'Activity Id'
+                    }, 'group_id': {'type': 'integer', 'title': 'Group Id'
+                    }, 'start_time': {'type': 'string', 'format': 'date-time', 'title': 'Start Time'
+                    }, 'end_time': {'anyOf': [
+                            {'type': 'string', 'format': 'date-time'
+                            },
+                            {'type': 'null'
+                            }
+                        ], 'title': 'End Time'
+                    }, 'id': {'type': 'integer', 'title': 'Id'
+                    }, 'created_at': {'type': 'string', 'format': 'date-time', 'title': 'Created At'
+                    }, 'activity': {'$ref': '#/components/schemas/StudyActivity'
+                    }, 'group': {'$ref': '#/components/schemas/Group'
+                    }, 'review_items': {'items': {'$ref': '#/components/schemas/WordReview'
+                        }, 'type': 'array', 'title': 'Review Items', 'default': []
+                    }
+                }, 'type': 'object', 'required': ['activity_id', 'group_id', 'start_time', 'id', 'created_at', 'activity', 'group'
+                ], 'title': 'StudySession'
+            }, 'ValidationError': {'properties': {'loc': {'items': {'anyOf': [
+                                {'type': 'string'
+                                },
+                                {'type': 'integer'
+                                }
+                            ]
+                        }, 'type': 'array', 'title': 'Location'
+                    }, 'msg': {'type': 'string', 'title': 'Message'
+                    }, 'type': {'type': 'string', 'title': 'Error Type'
+                    }
+                }, 'type': 'object', 'required': ['loc', 'msg', 'type'
+                ], 'title': 'ValidationError'
+            }, 'Word': {'properties': {'french': {'type': 'string', 'title': 'French'
+                    }, 'english': {'type': 'string', 'title': 'English'
+                    }, 'parts': {'anyOf': [
+                            {'type': 'object'
+                            },
+                            {'type': 'null'
+                            }
+                        ], 'title': 'Parts'
+                    }, 'id': {'type': 'integer', 'title': 'Id'
+                    }, 'correct_count': {'type': 'integer', 'title': 'Correct Count', 'default': 0
+                    }, 'wrong_count': {'type': 'integer', 'title': 'Wrong Count', 'default': 0
+                    }, 'created_at': {'type': 'string', 'format': 'date-time', 'title': 'Created At'
+                    }, 'updated_at': {'type': 'string', 'format': 'date-time', 'title': 'Updated At'
+                    }
+                }, 'type': 'object', 'required': ['french', 'english', 'id', 'created_at', 'updated_at'
+                ], 'title': 'Word'
+            }, 'WordCreate': {'properties': {'french': {'type': 'string', 'title': 'French'
+                    }, 'english': {'type': 'string', 'title': 'English'
+                    }, 'parts': {'anyOf': [
+                            {'type': 'object'
+                            },
+                            {'type': 'null'
+                            }
+                        ], 'title': 'Parts'
+                    }
+                }, 'type': 'object', 'required': ['french', 'english'
+                ], 'title': 'WordCreate'
+            }, 'WordReview': {'properties': {'word_id': {'type': 'integer', 'title': 'Word Id'
+                    }, 'session_id': {'type': 'integer', 'title': 'Session Id'
+                    }, 'is_correct': {'type': 'boolean', 'title': 'Is Correct'
+                    }, 'id': {'type': 'integer', 'title': 'Id'
+                    }, 'timestamp': {'type': 'string', 'format': 'date-time', 'title': 'Timestamp'
+                    }, 'created_at': {'type': 'string', 'format': 'date-time', 'title': 'Created At'
+                    }, 'word': {'$ref': '#/components/schemas/Word'
+                    }
+                }, 'type': 'object', 'required': ['word_id', 'session_id', 'is_correct', 'id', 'timestamp', 'created_at', 'word'
+                ], 'title': 'WordReview'
+            }, 'WordReviewCreate': {'properties': {'word_id': {'type': 'integer', 'title': 'Word Id'
+                    }, 'session_id': {'type': 'integer', 'title': 'Session Id'
+                    }, 'is_correct': {'type': 'boolean', 'title': 'Is Correct'
+                    }
+                }, 'type': 'object', 'required': ['word_id', 'session_id', 'is_correct'
+                ], 'title': 'WordReviewCreate'
+            }
+        }
+    }
+}
