@@ -187,3 +187,7 @@ backend/*.pkg
 # Audio files
 frontend/static/audio/*
 frontend/static/audio/.gitkeep
+
+# Large model files
+*.safetensors
+../arabic--streamlit-app/models/arabic-ocr/model.safetensors

@@ -1,1 +1,8 @@
  
+models/*.safetensors
+models/*.json
+models/*.pth
+models/*.pt
+models/*.pth.tar
+models/*.pth.tar.gz
+models/*.pth.tar.bz2

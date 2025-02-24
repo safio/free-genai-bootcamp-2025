@@ -1,2 +1,5 @@
 .DS_Store
 week1/free-genai-bootcamp/.cursor/rules/flask.mdc
+# Large model files
+*.safetensors
+week2/arabic--streamlit-app/models/arabic-ocr/model.safetensors
