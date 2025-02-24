@@ -1,0 +1,11 @@
+numpy==1.24.3
+scipy==1.11.3
+torch==2.1.0
+torchvision==0.16.0
+opencv-python==4.8.0.76
+easyocr==1.7.1
+Pillow==10.0.0
+streamlit==1.40.2
+streamlit_drawable_canvas==0.9.3
+python-certifi-win32==1.6.1
+huggingface-hub==0.28.1
